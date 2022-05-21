@@ -41,7 +41,7 @@ how to run demo:
   pip install torchsummary
   pip install torch-summary
   pip uninstall scikit-learn
-  conda install --user-local scikit-learn-0.24.2-py37hf11a4ad_2.tar.bz2
+  conda install --use-local scikit-learn-0.24.2-py37hf11a4ad_2.tar.bz2
   ```
 
 ​		using `conda list` check packages version is right .make sure python == 3.7 and **scikit-learn == 0.24.2** 
