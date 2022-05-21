@@ -2,9 +2,9 @@
 
 ---
 
-**Group Member: **
+**Group Member:**
 
-**Liu JieWen, Zhou MinTao, Li JiaJun, Shao GuanFang, **
+**Liu JieWen, Zhou MinTao, Li JiaJun, Shao GuanFang,**
 
 **Guo Hui, He ChenRui, Lan ChenXi, Zeng HanYang**
 
