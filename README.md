@@ -37,11 +37,9 @@ how to run demo:
   conda create -n cs306 python==3.7 
   
   conda activate cs306
-  conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.1 -c pytorch
-  pip install torchsummary
-  pip install torch-summary
-  pip uninstall scikit-learn
-  conda install --use-local scikit-learn-0.24.2-py37hf11a4ad_2.tar.bz2
+  conda install pytorch==1.7.1 torchvision==0.8.2 torchaudio==0.7.2 cudatoolkit=10.1 -c pytorch -y
+  conda install pandas scikit-learn==0.24.2 -y
+  conda install torchinfo -c conda-forge -y
   ```
 
 ​		using `conda list` check packages version is right .make sure python == 3.7 and **scikit-learn == 0.24.2** 

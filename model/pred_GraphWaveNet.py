@@ -13,7 +13,7 @@ import torch
 import torch.nn as nn
 import torch.nn.init as init
 import torch.nn.functional as F
-from torchsummary import summary
+from torchinfo import summary
 import Metrics
 import Utils
 from GraphWaveNet import *
@@ -31,7 +31,7 @@ parser.add_argument("--n_node", type=int, default=69, help="the number of the no
 parser.add_argument("--channel", type=int, default=1, help="number of channel")
 parser.add_argument("--batchsize", type=int, default=64, help="size of the batches")
 parser.add_argument("--lr", type=float, default=0.001, help="adam: learning rate")
-parser.add_argument("--epoch", type=int, default=200, help="number of epochs of training")
+parser.add_argument("--epoch", type=int, default=5, help="number of epochs of training")
 parser.add_argument("--patience", type=float, default=10, help="patience used for early stop")
 parser.add_argument("--optimizer", type=str, default='Adam', help="RMSprop, Adam")
 parser.add_argument("--loss", type=str, default='MAE', help="MAE, MSE, SELF")
@@ -179,7 +179,7 @@ def trainModel(name, mode, XS, YS):
     print('Model Training Started ...', time.ctime())
     print('TIMESTEP_IN, TIMESTEP_OUT', TIMESTEP_IN, TIMESTEP_OUT)
     model = getModel(name)
-    summary(model, (CHANNEL, N_NODE, TIMESTEP_IN), device=device)
+    summary(model, (BATCHSIZE, CHANNEL, N_NODE, TIMESTEP_IN), device=device)
     XS_torch, YS_torch = torch.Tensor(XS).to(device), torch.Tensor(YS).to(device)
     trainval_data = torch.utils.data.TensorDataset(XS_torch, YS_torch)
     trainval_size = len(trainval_data)

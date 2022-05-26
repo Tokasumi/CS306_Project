@@ -12,7 +12,7 @@ import scipy.sparse as sp
 from scipy.sparse.linalg import eigs
 import numpy as np
 import pandas as pd
-from torchsummary import summary
+from torchinfo import summary
 from Utils import load_pickle
 
 import argparse
@@ -310,7 +310,7 @@ def main():
     adj_mx =load_adj(ADJPATH,ADJTYPE)
     supports = [torch.tensor(i).to(device) for i in adj_mx]
     model = gwnet(device, num_nodes=N_NODE, in_dim=CHANNEL, supports=supports).to(device)
-    summary(model, (CHANNEL, N_NODE, TIMESTEP_IN), device=device)
+    summary(model, (BATCHSIZE, CHANNEL, N_NODE, TIMESTEP_IN), device=device)
 
 if __name__ == '__main__':
     main()
